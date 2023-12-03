@@ -1,0 +1,21 @@
+{
+  "values": [
+    "jellyfishing:coralstone",
+    "jellyfishing:coralstone_stairs",
+    "jellyfishing:coralstone_slab",
+    "jellyfishing:coralstone_wall",
+    "jellyfishing:polished_coralstone",
+    "jellyfishing:polished_coralstone_stairs",
+    "jellyfishing:polished_coralstone_slab",
+    "jellyfishing:algae_grass",
+    "jellyfishing:scrap_metal",
+    "jellyfishing:scrap_metal_stairs",
+    "jellyfishing:scrap_metal_slab",
+    "jellyfishing:chrome_metal",
+    "jellyfishing:chrome_metal_stairs",
+    "jellyfishing:chrome_metal_slab",
+    "jellyfishing:chrome_bricks",
+    "jellyfishing:chrome_brick_stairs",
+    "jellyfishing:chrome_brick_slab"
+  ]
+}

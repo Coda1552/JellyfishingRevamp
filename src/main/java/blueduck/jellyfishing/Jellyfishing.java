@@ -1,5 +1,6 @@
 package blueduck.jellyfishing;
 
+import blueduck.jellyfishing.registry.ModBlocks;
 import blueduck.jellyfishing.registry.ModCreativeTabs;
 import blueduck.jellyfishing.registry.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -14,6 +15,7 @@ public class Jellyfishing {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);
+        ModBlocks.BLOCKS.register(bus);
         ModCreativeTabs.CREATIVE_TABS.register(bus);
     }
 }
