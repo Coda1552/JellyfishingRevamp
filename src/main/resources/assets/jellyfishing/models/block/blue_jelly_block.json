@@ -1,4 +1,5 @@
 {   "parent": "block/block",
+  "render_type": "translucent",
   "textures": {
     "particle": "jellyfishing:block/blue_jelly_block_top",
     "down": "jellyfishing:block/blue_jelly_block_bottom",

@@ -1,9 +1,7 @@
 package blueduck.jellyfishing.registry;
 
 import blueduck.jellyfishing.Jellyfishing;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -75,6 +73,12 @@ public class ModBlocks {
 
     //Miscellaneous
     public static final RegistryObject<Block> PATTY_TILES = registerBlock("patty_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WET_SPONGE)));
+
+    public static final RegistryObject<Block> JELLY_BLOCK = registerBlock("jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(1.5f)));
+    public static final RegistryObject<Block> BLUE_JELLY_BLOCK = registerBlock("blue_jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(2)));
+
+    public static final RegistryObject<Block> CORAL_PLANT = registerBlock("coral_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noOcclusion().lightLevel((p_50884_) -> { return 10;})));
+    public static final RegistryObject<Block> TUBE_PLANT = registerBlock("tube_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
