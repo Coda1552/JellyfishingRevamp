@@ -13,7 +13,7 @@ public class ModCreativeTabs {
     public static final RegistryObject<CreativeModeTab> MOD_TAB = CREATIVE_TABS.register("jellyfishing_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + Jellyfishing.MOD_ID))
-                    .icon(ModItems.JELLYFISH_JELLY.get()::getDefaultInstance)
+                    .icon(ModItems.JELLYFISH.get()::getDefaultInstance)
                     .displayItems((displayParams, output) -> {
                         for (var item : ModItems.ITEMS.getEntries()) {
                             output.accept(item.get());

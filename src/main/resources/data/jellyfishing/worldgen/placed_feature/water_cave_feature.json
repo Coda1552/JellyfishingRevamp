@@ -1,0 +1,8 @@
+{
+  "feature": "jellyfishing:water_cave_feature",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

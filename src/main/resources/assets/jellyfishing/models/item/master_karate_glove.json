@@ -1,0 +1,24 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "jellyfishing:item/master_karate_glove_item"
+    }
+  },
+  "perspectives": {
+    "thirdperson_lefthand": {
+      "parent": "jellyfishing:item/master_karate_glove_left"
+    },
+    "firstperson_lefthand": {
+      "parent": "jellyfishing:item/master_karate_glove_left"
+    },
+    "thirdperson_righthand": {
+      "parent": "jellyfishing:item/master_karate_glove_right"
+    },
+    "firstperson_righthand": {
+      "parent": "jellyfishing:item/master_karate_glove_right"
+    }
+  }
+}

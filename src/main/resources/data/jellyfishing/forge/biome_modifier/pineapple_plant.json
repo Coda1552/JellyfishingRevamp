@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_jungle",
+  "features": "jellyfishing:pineapple_plant_feature",
+  "step": "vegetal_decoration"
+}

@@ -1,5 +1,7 @@
 {
   "values": [
-    "jellyfishing:algae_block"
+    "jellyfishing:algae_block",
+    "jellyfishing:deep_sand",
+    "jellyfishing:deep_soil"
   ]
 }

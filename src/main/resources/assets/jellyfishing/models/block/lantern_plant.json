@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "render_type": "cutout_mipped",
+  "textures": {
+    "cross": "jellyfishing:block/small_rock_bottom_plant"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "jellyfishing:block/tall_rock_bottom_plant_top"
+  }
+}

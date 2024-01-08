@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "jellyfishing:block/deep_sand",
+    "top": "jellyfishing:block/deep_soil",
+    "side": "jellyfishing:block/deep_soil_side"
+  }
+}

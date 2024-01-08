@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "jellyfishing:block/tall_lantern_plant_bottom"
+    },
+    "half=upper": {
+      "model": "jellyfishing:block/tall_lantern_plant_top"
+    }
+  }
+}

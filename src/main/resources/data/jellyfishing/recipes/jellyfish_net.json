@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "%%#",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "%": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "jellyfishing:jellyfish_net"
+  }
+}

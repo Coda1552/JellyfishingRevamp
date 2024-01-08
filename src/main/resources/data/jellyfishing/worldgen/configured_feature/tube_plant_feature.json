@@ -1,0 +1,6 @@
+{
+  "type": "jellyfishing:tube_plant_feature",
+  "config": {
+    "probability": 0.3
+  }
+}

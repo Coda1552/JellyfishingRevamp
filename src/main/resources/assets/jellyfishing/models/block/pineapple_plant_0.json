@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout_mipped",
 	"ambientocclusion": false,
 	"textures": {
 		"0": "jellyfishing:block/pineapple_fan_small",

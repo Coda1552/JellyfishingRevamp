@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [{ "model": "jellyfishing:block/deep_sprout_blue" },
+      { "model": "jellyfishing:block/deep_sprout_green" },
+      { "model": "jellyfishing:block/deep_sprout_red" },
+      { "model": "jellyfishing:block/deep_sprout_yellow" }
+     ]
+  }
+}

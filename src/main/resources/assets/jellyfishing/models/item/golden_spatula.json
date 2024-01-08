@@ -1,0 +1,21 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "jellyfishing:item/golden_spatula_gui"
+  },
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "jellyfishing:item/golden_spatula_in_hand"
+    },
+    "firstperson_righthand": {
+      "parent": "jellyfishing:item/golden_spatula_in_hand"
+    },
+    "thirdperson_lefthand": {
+      "parent": "jellyfishing:item/golden_spatula_in_hand"
+    },
+    "thirdperson_righthand": {
+      "parent": "jellyfishing:item/golden_spatula_in_hand"
+    }
+  }
+}

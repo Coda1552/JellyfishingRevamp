@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "%#%",
+    "% %",
+    "% %"
+  ],
+  "key": {
+    "#": {
+      "item": "jellyfishing:bubble_soap"
+    },
+    "%": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "jellyfishing:air_suit_leggings"
+  }
+}

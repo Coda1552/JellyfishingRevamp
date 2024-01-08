@@ -1,11 +1,13 @@
 package blueduck.jellyfishing.registry;
 
 import blueduck.jellyfishing.Jellyfishing;
+import blueduck.jellyfishing.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,7 +20,7 @@ public class ModBlocks {
 
     //Coralstone related blocks
     public static final RegistryObject<Block> CORALSTONE = registerBlock("coralstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
-    public static final RegistryObject<Block> ALGAE_GRASS = registerBlock("algae_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 5.0F)));
+    public static final RegistryObject<Block> ALGAE_GRASS = registerBlock("algae_grass", () -> new AlgaeGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 5.0F), () -> CORALSTONE.get()));
     public static final RegistryObject<Block> ALGAE_BLOCK = registerBlock("algae_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).strength(.75F, 2.0F)));
     public static final RegistryObject<Block> CORALSTONE_STAIRS = registerBlock("coralstone_stairs", () -> new StairBlock(() -> CORALSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final RegistryObject<Block> CORALSTONE_SLAB = registerBlock("coralstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
@@ -26,6 +28,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLISHED_CORALSTONE = registerBlock("polished_coralstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final RegistryObject<Block> POLISHED_CORALSTONE_STAIRS = registerBlock("polished_coralstone_stairs", () -> new StairBlock(() -> POLISHED_CORALSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final RegistryObject<Block> POLISHED_CORALSTONE_SLAB = registerBlock("polished_coralstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    //Rock Bottom
+    public static final RegistryObject<Block> DEEP_SAND = registerBlock("deep_sand", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 6.0F)));
+    public static final RegistryObject<Block> DEEP_SOIL = registerBlock("deep_soil", () -> new AlgaeGrassBlock(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 5.0F), () -> DEEP_SAND.get()));
+
     //Metallic Blockset
     public static final RegistryObject<Block> SCRAP_METAL = registerBlock("scrap_metal", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
     public static final RegistryObject<Block> SCRAP_METAL_STAIRS = registerBlock("scrap_metal_stairs", () -> new StairBlock(() -> SCRAP_METAL.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
@@ -49,6 +56,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> YELLOW_BAMBOO_WALL = registerBlock("yellow_bamboo_wall", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK)));
 
     //Pineapple Blockset
+    public static final RegistryObject<Block> PINEAPPLE_PLANT = BLOCKS.register("pineapple_plant", () -> new PineapplePlant(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
     public static final RegistryObject<Block> PINEAPPLE_BLOCK = registerBlock("pineapple_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WET_GRASS).strength(.5F, 2.0F)));
     public static final RegistryObject<Block> PINEAPPLE_PILLAR = registerBlock("pineapple_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(PINEAPPLE_BLOCK.get())));
     public static final RegistryObject<Block> CHISELED_PINEAPPLE_BLOCK = registerBlock("chiseled_pineapple_block", () -> new Block(BlockBehaviour.Properties.copy(PINEAPPLE_BLOCK.get())));
@@ -72,13 +80,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINK_CARPETED_TILES = registerBlock("pink_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.BAMBOO_WOOD)));
 
     //Miscellaneous
+    public static final RegistryObject<Block> SEANUT_BRITTLE_BLOCK = registerBlock("seanut_brittle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final RegistryObject<Block> BUBBLE_BLOCK = BLOCKS.register("bubble_block", () -> new BubbleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE).lightLevel((p_50884_) -> {return 0;}).friction(0.5f)));
+    public static final RegistryObject<Block> WAXED_BUBBLE_BLOCK = BLOCKS.register("waxed_bubble_block", () -> new Block(BlockBehaviour.Properties.copy(BUBBLE_BLOCK.get())));
+
     public static final RegistryObject<Block> PATTY_TILES = registerBlock("patty_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WET_SPONGE)));
 
     public static final RegistryObject<Block> JELLY_BLOCK = registerBlock("jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(1.5f)));
     public static final RegistryObject<Block> BLUE_JELLY_BLOCK = registerBlock("blue_jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(2)));
 
-    public static final RegistryObject<Block> CORAL_PLANT = registerBlock("coral_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noOcclusion().lightLevel((p_50884_) -> { return 10;})));
-    public static final RegistryObject<Block> TUBE_PLANT = registerBlock("tube_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noOcclusion()));
+    public static final RegistryObject<Block> CORAL_PLANT = registerBlock("coral_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE).noOcclusion().noCollission().lightLevel((p_50884_) -> { return 10;})));
+    public static final RegistryObject<Block> TUBE_PLANT = registerBlock("tube_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollission().instabreak()));
+    public static final RegistryObject<Block> DEEP_SPROUT = registerBlock("deep_sprout", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.SEAGRASS).noOcclusion()));
+
+    public static final RegistryObject<Block> LANTERN_PLANT = registerBlock("lantern_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollission().instabreak().lightLevel((p_50884_) -> { return 5;})));
+    public static final RegistryObject<Block> TALL_LANTERN_PLANT = registerBlock("tall_lantern_plant", () -> new DoubleWaterPlant(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollission().instabreak().lightLevel((p_50884_) -> { return 7;})));
+
+    public static final RegistryObject<Block> SEANUT_BUSH = BLOCKS.register("seanut_bush", () -> new SeanutBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
