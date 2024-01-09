@@ -79,14 +79,14 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.BLUE_JELLYFISH, 1936112, 678049,
                     new Item.Properties()));
     public static final RegistryObject<ForgeSpawnEggItem> BUBBLE_JELLYFISH_SPAWN_EGG = ITEMS.register("bubble_jellyfish_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.BUBBLE_JELLYFISH, 10395289, 1973796,
+            () -> new ForgeSpawnEggItem(ModEntities.BUBBLE_JELLYFISH, 757470, 757404,
                     new Item.Properties()));
     public static final RegistryObject<ForgeSpawnEggItem> COW_JELLYFISH_SPAWN_EGG = ITEMS.register("cow_jellyfish_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.COW_JELLYFISH, 10395289, 1973796,
+            () -> new ForgeSpawnEggItem(ModEntities.COW_JELLYFISH, 14017754, 11,
                     new Item.Properties()));
 
     public static final RegistryObject<ForgeSpawnEggItem> TWO_FISTED_JUMPER_SPAWN_EGG = ITEMS.register("two_fisted_jumper_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.TWO_FISTED_JUMPER, 10395289, 1973796,
+            () -> new ForgeSpawnEggItem(ModEntities.TWO_FISTED_JUMPER, 12405771, 14856704,
                     new Item.Properties()));
 
 
