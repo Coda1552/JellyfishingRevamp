@@ -18,6 +18,15 @@ import java.util.EnumMap;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Jellyfishing.MOD_ID);
 
+
+    public static final RegistryObject<Item> JELLYFISH_NET = ITEMS.register("jellyfish_net", () -> new JellyfishNetItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> NET_JELLYFISH = ITEMS.register("net_of_jellyfish", () -> new NetJellyfishItem(new Item.Properties().stacksTo(1), () -> ModEntities.JELLYFISH.get()));
+    public static final RegistryObject<Item> NET_BLUE_JELLYFISH = ITEMS.register("net_of_blue_jellyfish", () -> new NetJellyfishItem(new Item.Properties().stacksTo(1), () -> ModEntities.BLUE_JELLYFISH.get()));
+    public static final RegistryObject<Item> NET_BUBBLE_JELLYFISH = ITEMS.register("net_of_bubble_jellyfish", () -> new NetJellyfishItem(new Item.Properties().stacksTo(1), () -> ModEntities.BUBBLE_JELLYFISH.get()));
+    public static final RegistryObject<Item> NET_COW_JELLYFISH = ITEMS.register("net_of_cow_jellyfish", () -> new NetJellyfishItem(new Item.Properties().stacksTo(1), () -> ModEntities.COW_JELLYFISH.get()));
+    public static final RegistryObject<Item> NET_TWO_FISTED_JUMPER = ITEMS.register("net_of_two_fisted_jumper", () -> new NetJellyfishItem(new Item.Properties().stacksTo(1), () -> ModEntities.TWO_FISTED_JUMPER.get()));
+
     public static final RegistryObject<Item> JELLYFISH = ITEMS.register("jellyfish", () -> new JellyfishItem(new Item.Properties(), () -> ModEntities.JELLYFISH.get()));
     public static final RegistryObject<Item> BLUE_JELLYFISH = ITEMS.register("blue_jellyfish", () -> new JellyfishItem(new Item.Properties(), () -> ModEntities.BLUE_JELLYFISH.get()));
     public static final RegistryObject<Item> BUBBLE_JELLYFISH = ITEMS.register("bubble_jellyfish", () -> new JellyfishItem(new Item.Properties(), () -> ModEntities.BUBBLE_JELLYFISH.get()));
@@ -46,13 +55,14 @@ public class ModItems {
     public static final RegistryObject<Item> PINEAPPLE_SEEDS = ITEMS.register("pineapple_seeds", () -> new ItemNameBlockItem(ModBlocks.PINEAPPLE_PLANT.get(), new Item.Properties()));
     public static final RegistryObject<Item> PINEAPPLE = ITEMS.register("pineapple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build())));
     public static final RegistryObject<Item> KELP_SHAKE = ITEMS.register("kelp_shake", () -> new KelpShakeItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).build())));
+    public static ArmorMaterial KELP = new KelpMaterial();
+    public static final RegistryObject<Item> KELP_MUSTACHE = ITEMS.register("kelp_mustache", () -> new KelpMustacheItem(KELP, new Item.Properties().durability(256)));
 
     public static final RegistryObject<Item> TRIPLE_GOOBERBERRY_SUNRISE = ITEMS.register("triple_gooberberry_sunrise", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
 
     public static final RegistryObject<Item> KRABBY_PATTY = ITEMS.register("krabby_patty", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).build())));
 
 
-    public static final RegistryObject<Item> JELLYFISH_NET = ITEMS.register("jellyfish_net", () -> new JellyfishNetItem(new Item.Properties().durability(64)));
     public static final RegistryObject<Item> BUBBLE_WAND = ITEMS.register("bubble_wand", () -> new BubbleWandItem(ModBlocks.BUBBLE_BLOCK.get(), new Item.Properties().durability(256)));
 
     public static final RegistryObject<Item> SPATULA = ITEMS.register("spatula", () -> new SpatulaItem(new Item.Properties().durability(781), Tiers.IRON, 3, -1.5f));

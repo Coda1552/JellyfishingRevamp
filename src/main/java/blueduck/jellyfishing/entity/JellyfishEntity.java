@@ -11,7 +11,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class JellyfishEntity extends AbstractJellyfishEntity {
 
     public JellyfishEntity(EntityType<? extends Squid> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel, ModItems.JELLYFISH_JELLY.get(), ModItems.JELLYFISH.get(), 0.9);
+        super(pEntityType, pLevel, ModItems.JELLYFISH_JELLY.get(), ModItems.NET_JELLYFISH.get(), 0.9);
 
     }
 

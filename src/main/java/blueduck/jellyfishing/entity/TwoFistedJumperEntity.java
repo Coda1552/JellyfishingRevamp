@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 public class TwoFistedJumperEntity extends AbstractJellyfishEntity {
 
     public TwoFistedJumperEntity(EntityType<? extends Squid> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel, ModItems.JUMPER_JELLY.get(), ModItems.TWO_FISTED_JUMPER.get(), 0.25);
+        super(pEntityType, pLevel, ModItems.JUMPER_JELLY.get(), ModItems.NET_TWO_FISTED_JUMPER.get(), 0.25);
     }
 
     public void playerTouch(Player pEntity) {

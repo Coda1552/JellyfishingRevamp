@@ -27,7 +27,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "jellyfishing:coralstone_arch_feature"
     ],
     [
       "minecraft:monster_room",

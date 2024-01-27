@@ -2,6 +2,7 @@ package blueduck.jellyfishing.registry;
 
 import blueduck.jellyfishing.Jellyfishing;
 import blueduck.jellyfishing.enchantments.AgilityEnchantment;
+import blueduck.jellyfishing.enchantments.PlunderingEnchantment;
 import blueduck.jellyfishing.item.JellyfishNetItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.FishingRodItem;
@@ -19,6 +20,7 @@ public class ModEnchantments {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Jellyfishing.MOD_ID);
 
     public static final RegistryObject<Enchantment> AGILITY = ENCHANTMENTS.register("agility", () -> new AgilityEnchantment(Enchantment.Rarity.UNCOMMON, NET, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
+    public static final RegistryObject<Enchantment> PLUNDERING = ENCHANTMENTS.register("plundering", () -> new PlunderingEnchantment(Enchantment.Rarity.RARE, NET, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
 
 
 }

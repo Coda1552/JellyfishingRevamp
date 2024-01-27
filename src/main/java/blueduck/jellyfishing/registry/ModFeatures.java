@@ -19,6 +19,7 @@ public class ModFeatures {
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> TUBE_PLANT_FEATURE = FEATURES.register("tube_plant_feature", () -> new TubePlantFeature(ProbabilityFeatureConfiguration.CODEC));
 
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> SEANUT_BUSH_FEATURE = FEATURES.register("seanut_bush_feature", () -> new SeanutBushFeature(ProbabilityFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CORALSTONE_ARCH_FEATURE = FEATURES.register("coralstone_arch_feature", () -> new CoralstoneArchFeature(NoneFeatureConfiguration.CODEC));
 
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> DEEP_SPROUT_FEATURE = FEATURES.register("deep_sprout_feature", () -> new DeepSproutFeature(ProbabilityFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> LANTERN_PLANT_FEATURE = FEATURES.register("lantern_plant_feature", () -> new LanternPlantFeature(ProbabilityFeatureConfiguration.CODEC));

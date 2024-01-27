@@ -3,6 +3,7 @@ package blueduck.jellyfishing.item;
 import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
@@ -24,6 +25,11 @@ public class KelpMustacheItem extends ArmorItem {
             });
         }
         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 10, 0));
+    }
+
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return "jellyfishing:textures/models/armor/mustache_layer_1.png";
     }
 
 }

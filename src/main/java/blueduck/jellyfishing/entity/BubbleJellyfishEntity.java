@@ -17,7 +17,7 @@ import net.minecraft.world.phys.Vec3;
 public class BubbleJellyfishEntity extends AbstractJellyfishEntity {
 
     public BubbleJellyfishEntity(EntityType<? extends Squid> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel, ModItems.BUBBLE_SOAP.get(), ModItems.BUBBLE_JELLYFISH.get(), 0.9);
+        super(pEntityType, pLevel, ModItems.BUBBLE_SOAP.get(), ModItems.NET_BUBBLE_JELLYFISH.get(), 0.9);
 
     }
 

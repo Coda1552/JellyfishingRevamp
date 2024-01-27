@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:gameplay",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1.0,
+        "max": 1.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 6,
+          "name": "jellyfishing:coral_plant"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "jellyfishing:tube_plant"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:lantern_plant"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:tall_lantern_plant"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:deep_sprout"
+        }
+      ]
+    }
+  ]
+}

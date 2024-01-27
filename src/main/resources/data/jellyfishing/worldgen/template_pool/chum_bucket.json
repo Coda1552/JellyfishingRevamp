@@ -1,0 +1,21 @@
+{
+  "name": "jellyfishing:chum_bucket",
+
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+
+      "weight": 10,
+      "element": {
+
+        "location": "jellyfishing:chum_bucket",
+
+        "processors": "minecraft:empty",
+
+        "projection": "rigid",
+
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

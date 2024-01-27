@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:gameplay",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1.0,
+        "max": 1.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "jellyfishing:jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "jellyfishing:blue_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:cow_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "jellyfishing:bubble_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:two_fisted_jumper"
+        }
+      ]
+    }
+  ]
+}
