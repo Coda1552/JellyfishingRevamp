@@ -20,7 +20,7 @@ public class BlueJellyfishEntity extends AbstractJellyfishEntity {
 
 
 
-    public static boolean canSpawnJellyfish(EntityType<TwoFistedJumperEntity> entityType, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource rand) {
+    public static boolean canSpawnJellyfish(EntityType<BlueJellyfishEntity> entityType, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource rand) {
         return canSpawn(entityType, level, type, pos, rand);
     }
 
