@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "jellyfishing:jumper_jelly"
+    },
+    {
+      "item": "jellyfishing:seanut_butter"
+    },
+    {
+      "tag": "forge:bread"
+    }
+  ],
+  "result": {
+    "item": "jellyfishing:seanut_butter_jumper_jelly_sandwich"
+  }
+}

@@ -12,12 +12,14 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -39,6 +41,10 @@ public class NetJellyfishItem extends Item {
     }
 
     public InteractionResult useOn(UseOnContext pContext) {
+//        if (true) {
+//            return InteractionResult.FAIL;
+//        }
+        //This is being annoying so now you can only place them in water
         Level level = pContext.getLevel();
         if (!(level instanceof ServerLevel)) {
             return InteractionResult.SUCCESS;
@@ -56,7 +62,7 @@ public class NetJellyfishItem extends Item {
             }
 
             Entity entity = this.getType(itemstack.getTag()).spawn((ServerLevel)level, itemstack, pContext.getPlayer(), blockpos1, MobSpawnType.BUCKET, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP);
-            if (entity != null) {
+            if (entity != null && !pContext.getPlayer().getAbilities().instabuild) {
                 ItemStack netItem = new ItemStack(ModItems.JELLYFISH_NET.get());
                 if (itemstack.isEnchanted()) {
                     Map<Enchantment, Integer> enchantmentmap = itemstack.getAllEnchantments();
@@ -66,7 +72,14 @@ public class NetJellyfishItem extends Item {
                         netItem.enchant((Enchantment) enchantments[i], (Integer) levels[i]);
                     }
                 }
+                netItem.setDamageValue(itemstack.getDamageValue());
+                pContext.getPlayer().getItemInHand(pContext.getHand()).shrink(1);
                 pContext.getPlayer().setItemInHand(pContext.getHand(), netItem);
+                if (pContext.getPlayer().getItemInHand(pContext.getHand()).getEnchantmentLevel(Enchantments.UNBREAKING) * .25 < pContext.getLevel().getRandom().nextDouble()) {
+                    pContext.getPlayer().getItemInHand(pContext.getHand()).hurtAndBreak(1, pContext.getPlayer(), (p_43296_) -> {
+                        p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+                    });
+                }
                 level.gameEvent(pContext.getPlayer(), GameEvent.ENTITY_PLACE, blockpos);
                 entity.getPersistentData().putBoolean("PersistenceRequired", true);
             }
@@ -93,7 +106,6 @@ public class NetJellyfishItem extends Item {
                     return InteractionResultHolder.pass(itemstack);
                 } else {
                     if (!pPlayer.getAbilities().instabuild) {
-                        //pPlayer.getItemInHand(pHand).shrink(1);
                         ItemStack netItem = new ItemStack(ModItems.JELLYFISH_NET.get());
                         if (itemstack.isEnchanted()) {
                             Map<Enchantment, Integer> enchantmentmap = itemstack.getAllEnchantments();
@@ -103,7 +115,17 @@ public class NetJellyfishItem extends Item {
                                 netItem.enchant((Enchantment) enchantments[i], (Integer) levels[i]);
                             }
                         }
+                        netItem.setDamageValue(itemstack.getDamageValue());
+
                         pPlayer.setItemInHand(pHand, netItem);
+                        if (pPlayer.getItemInHand(pHand).getEnchantmentLevel(Enchantments.UNBREAKING) * .25 < pLevel.getRandom().nextDouble()) {
+                            pPlayer.getItemInHand(pHand).hurtAndBreak(1, pPlayer, (p_43296_) -> {
+                                p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+                            });
+                        }
+
+
+
                     }
 
                     pPlayer.awardStat(Stats.ITEM_USED.get(this));
@@ -119,5 +141,9 @@ public class NetJellyfishItem extends Item {
 
     public EntityType<?> getType(@Nullable CompoundTag pNbt) {
         return entityType.get();
+    }
+
+    public int getEnchantmentValue() {
+        return 1;
     }
 }

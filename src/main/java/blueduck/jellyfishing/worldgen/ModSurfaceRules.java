@@ -16,6 +16,8 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource ALGAE_GRASS = makeStateRule(ModBlocks.ALGAE_GRASS.get());
     private static final SurfaceRules.RuleSource DEEP_SAND = makeStateRule(ModBlocks.DEEP_SAND.get());
     private static final SurfaceRules.RuleSource DEEP_SOIL = makeStateRule(ModBlocks.DEEP_SOIL.get());
+    private static final SurfaceRules.RuleSource GHOSTLY_SAND = makeStateRule(ModBlocks.GHOSTLY_SAND.get());
+    private static final SurfaceRules.RuleSource GHOSTLY_SOIL = makeStateRule(ModBlocks.GHOSTLY_SOIL.get());
 
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
     public static final SurfaceRules.ConditionSource WATER_ROCK_BOTTOM = stoneDepthCheck(0, true, 20, CaveSurface.CEILING);

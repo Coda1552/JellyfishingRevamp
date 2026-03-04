@@ -2,6 +2,7 @@ package blueduck.jellyfishing.registry;
 
 import blueduck.jellyfishing.Jellyfishing;
 import blueduck.jellyfishing.block.*;
+import com.teamabnormals.blueprint.common.item.FuelBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,6 +34,11 @@ public class ModBlocks {
     //Rock Bottom
     public static final RegistryObject<Block> DEEP_SAND = registerBlock("deep_sand", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 6.0F)));
     public static final RegistryObject<Block> DEEP_SOIL = registerBlock("deep_soil", () -> new AlgaeGrassBlock(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 5.0F), () -> DEEP_SAND.get()));
+
+    //Dutchman's Graveyard
+    public static final RegistryObject<Block> GHOSTLY_SAND = registerBlock("ghostly_sand", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 6.0F)));
+    public static final RegistryObject<Block> GHOSTLY_SOIL = registerBlock("ghostly_soil", () -> new AlgaeGrassBlock(BlockBehaviour.Properties.copy(Blocks.SAND).strength(1.2F, 5.0F), () -> GHOSTLY_SAND.get()));
+
 
     //Metallic Blockset
     public static final RegistryObject<Block> SCRAP_METAL = registerBlock("scrap_metal", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
@@ -62,32 +69,36 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHISELED_PINEAPPLE_BLOCK = registerBlock("chiseled_pineapple_block", () -> new Block(BlockBehaviour.Properties.copy(PINEAPPLE_BLOCK.get())));
 
     //Carpet Tiles
-    public static final RegistryObject<Block> WHITE_CARPETED_TILES = registerBlock("white_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> LIGHT_GRAY_CARPETED_TILES = registerBlock("light_gray_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> GRAY_CARPETED_TILES = registerBlock("gray_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> BLACK_CARPETED_TILES = registerBlock("black_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> BROWN_CARPETED_TILES = registerBlock("brown_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> RED_CARPETED_TILES = registerBlock("red_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> ORANGE_CARPETED_TILES = registerBlock("orange_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> YELLOW_CARPETED_TILES = registerBlock("yellow_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> LIME_CARPETED_TILES = registerBlock("lime_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> GREEN_CARPETED_TILES = registerBlock("green_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> CYAN_CARPETED_TILES = registerBlock("cyan_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> LIGHT_BLUE_CARPETED_TILES = registerBlock("light_blue_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> BLUE_CARPETED_TILES = registerBlock("blue_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> PURPLE_CARPETED_TILES = registerBlock("purple_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> MAGENTA_CARPETED_TILES = registerBlock("magenta_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).sound(SoundType.BAMBOO_WOOD)));
-    public static final RegistryObject<Block> PINK_CARPETED_TILES = registerBlock("pink_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> WHITE_CARPETED_TILES = registerBlock("white_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> LIGHT_GRAY_CARPETED_TILES = registerBlock("light_gray_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> GRAY_CARPETED_TILES = registerBlock("gray_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_GRAY).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> BLACK_CARPETED_TILES = registerBlock("black_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_BLACK).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> BROWN_CARPETED_TILES = registerBlock("brown_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_BROWN).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> RED_CARPETED_TILES = registerBlock("red_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_RED).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> ORANGE_CARPETED_TILES = registerBlock("orange_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> YELLOW_CARPETED_TILES = registerBlock("yellow_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> LIME_CARPETED_TILES = registerBlock("lime_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_LIGHT_GREEN).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> GREEN_CARPETED_TILES = registerBlock("green_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_GREEN).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> CYAN_CARPETED_TILES = registerBlock("cyan_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_CYAN).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> LIGHT_BLUE_CARPETED_TILES = registerBlock("light_blue_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_LIGHT_BLUE).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> BLUE_CARPETED_TILES = registerBlock("blue_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> PURPLE_CARPETED_TILES = registerBlock("purple_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_PURPLE).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> MAGENTA_CARPETED_TILES = registerBlock("magenta_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_MAGENTA).sound(SoundType.BAMBOO_WOOD)));
+    public static final RegistryObject<Block> PINK_CARPETED_TILES = registerBlock("pink_carpeted_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_PINK).sound(SoundType.BAMBOO_WOOD)));
 
     //Miscellaneous
     public static final RegistryObject<Block> SEANUT_BRITTLE_BLOCK = registerBlock("seanut_brittle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
-    public static final RegistryObject<Block> BUBBLE_BLOCK = BLOCKS.register("bubble_block", () -> new BubbleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE).lightLevel((p_50884_) -> {return 0;}).friction(0.5f)));
+    public static final RegistryObject<Block> BUBBLE_BLOCK = BLOCKS.register("bubble_block", () -> new BubbleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE).lightLevel((p_50884_) -> {return 0;}).friction(0.95f).noOcclusion().noParticlesOnBreak()));
     public static final RegistryObject<Block> WAXED_BUBBLE_BLOCK = BLOCKS.register("waxed_bubble_block", () -> new Block(BlockBehaviour.Properties.copy(BUBBLE_BLOCK.get())));
 
     public static final RegistryObject<Block> PATTY_TILES = registerBlock("patty_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WET_SPONGE)));
 
-    public static final RegistryObject<Block> JELLY_BLOCK = registerBlock("jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(1.5f)));
-    public static final RegistryObject<Block> BLUE_JELLY_BLOCK = registerBlock("blue_jelly_block", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(2)));
+    public static final RegistryObject<Block> JELLY_BLOCK = registerBlock("jelly_block", () -> new JellyBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(1.5f)));
+    public static final RegistryObject<Block> BLUE_JELLY_BLOCK = registerBlock("blue_jelly_block", () -> new JellyBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(2)));
+    public static final RegistryObject<Block> GELATINOUS_MILK_BLOCK = registerBlock("gelatinous_milk_block", () -> new MilkBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> JUMPER_JELLY_BLOCK = registerBlock("jumper_jelly_block", () -> new JumperJellyBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion().jumpFactor(3)));
+
+    public static final RegistryObject<Block> GREASE_BLOCK = registerGreaseBlock("grease_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE).friction(.995f).sound(SoundType.SHROOMLIGHT).pushReaction(PushReaction.PUSH_ONLY).ignitedByLava()));
 
     public static final RegistryObject<Block> CORAL_PLANT = registerBlock("coral_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE).noOcclusion().noCollission().lightLevel((p_50884_) -> { return 10;})));
     public static final RegistryObject<Block> TUBE_PLANT = registerBlock("tube_plant", () -> new BaseCoralPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollission().instabreak()));
@@ -107,5 +118,15 @@ public class ModBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> RegistryObject<T> registerGreaseBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerGreaseBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerGreaseBlockItem(String name, RegistryObject<T> block) {
+        return ModItems.ITEMS.register(name, () -> new FuelBlockItem(block.get(), 4000, new Item.Properties()));
     }
 }

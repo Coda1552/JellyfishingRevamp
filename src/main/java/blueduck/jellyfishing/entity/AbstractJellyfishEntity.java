@@ -39,6 +39,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -89,6 +90,7 @@ public class AbstractJellyfishEntity extends Squid {
             return InteractionResult.FAIL;
         }
 
+
         ItemStack itemstack = player.getItemInHand(hand);
         if (itemstack.getItem() instanceof JellyfishNetItem && !player.getCooldowns().isOnCooldown(itemstack.getItem())) {
             player.swing(hand);
@@ -116,13 +118,14 @@ public class AbstractJellyfishEntity extends Squid {
                             netItem.enchant((Enchantment) enchantments[i], (Integer) levels[i]);
                         }
                     }
+                    netItem.setDamageValue(itemstack.getDamageValue());
                     player.setItemInHand(hand, netItem);
 //                    if (player.getItemInHand(hand).isEmpty()) {
 //
 //                    } else if (!player.getInventory().add( new ItemStack(JELLYFISH_NET_ITEM))) {
 //                        player.drop(new ItemStack(JELLYFISH_NET_ITEM), false);
 //                    }
-                    player.getCooldowns().addCooldown(JELLYFISH_NET_ITEM, 60);
+                    player.getCooldowns().addCooldown(JELLYFISH_NET_ITEM, 20);
                     if (!this.getPersistentData().getBoolean("PersistenceRequired")) {
                         int i = ((int) (1 - this.catchChance)^2 * 20);
                         while(i > 0) {
@@ -167,8 +170,26 @@ public class AbstractJellyfishEntity extends Squid {
 
     }
 
-    public static boolean canSpawn(EntityType<AbstractJellyfishEntity> entityType, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource rand) {
-        return checkMobSpawnRules(entityType, level, type, pos, rand);
+    public static boolean canSpawn(EntityType<?> entityType, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource rand) {
+        if (!level.getBlockState(pos).is(Blocks.WATER)) {
+            return false;
+        }
+
+        if (level instanceof ServerLevel serverLevel) {
+            float moonBrightness = serverLevel.getMoonBrightness();
+            if (moonBrightness < 1.0f) {
+                return rand.nextFloat() < moonBrightness + 0.1f;
+            }
+        }
+        return true; //checkMobSpawnRules(entityType, level, type, pos, rand);
+    }
+
+    @Override
+    public int getMaxSpawnClusterSize() {
+        if (this.level() instanceof ServerLevel serverLevel) {
+            return Math.max(1, Math.round(serverLevel.getMoonBrightness() * 8));
+        }
+        return 4; // default
     }
 
 

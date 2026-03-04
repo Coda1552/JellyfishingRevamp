@@ -1,6 +1,24 @@
 {
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "jellyfishing:item/net_of_jellyfish"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "jellyfishing:item/net_of_jellyfish"
+    }
+  },
+  "perspectives": {
+    "thirdperson_lefthand": {
+      "parent": "jellyfishing:item/net_of_jellyfish_3d"
+    },
+    "firstperson_lefthand": {
+      "parent": "jellyfishing:item/net_of_jellyfish_3d"
+    },
+    "thirdperson_righthand": {
+      "parent": "jellyfishing:item/net_of_jellyfish_3d"
+    },
+    "firstperson_righthand": {
+      "parent": "jellyfishing:item/net_of_jellyfish_3d"
+    }
   }
 }

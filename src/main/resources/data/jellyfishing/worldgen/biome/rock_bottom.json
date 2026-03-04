@@ -16,8 +16,8 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 7907327,
-    "water_color": 4159204,
+    "sky_color": 8103167,
+    "water_color": 4020182,
     "water_fog_color": 329011
   },
   "features": [
@@ -64,6 +64,7 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
+      "jellyfishing:rock_bottom_soil",
       "jellyfishing:rock_bottom_blackstone"
     ],
     [
@@ -201,6 +202,12 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 20
+      },
+      {
+        "type": "jellyfishing:grease_jellyfish",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 25
       }
     ]
   },

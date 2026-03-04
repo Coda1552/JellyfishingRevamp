@@ -1,0 +1,19 @@
+{
+	"levels": [
+		"minecraft:overworld"
+	],
+	"provider": {
+		"type": "blueprint:overlay",
+		"overlays": [
+			{
+				"biome_source": {
+					"type": "minecraft:checkerboard",
+					"biomes": "jellyfishing:rock_bottom",
+					"scale": 2
+				},
+				"matches_biomes": "minecraft:deep_cold_ocean"
+			}
+		]
+	},
+	"weight": 25
+}

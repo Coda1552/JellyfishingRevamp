@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "jellyfishing:buried_treasure",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 46545741,
+    "spacing": 20,
+    "separation": 11,
+    "type": "minecraft:random_spread"
+  },
+  "fallback": "minecraft:empty"
+}

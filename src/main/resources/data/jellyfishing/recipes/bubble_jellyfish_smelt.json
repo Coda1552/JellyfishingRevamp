@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "jellyfishing:bubble_jellyfish"
+  },
+  "result": "jellyfishing:bubble_soap",
+  "experience": 0.35,
+  "cookingtime": 200
+}

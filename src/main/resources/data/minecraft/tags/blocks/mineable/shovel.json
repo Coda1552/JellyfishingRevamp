@@ -2,6 +2,7 @@
   "values": [
     "jellyfishing:algae_block",
     "jellyfishing:deep_sand",
-    "jellyfishing:deep_soil"
+    "jellyfishing:deep_soil",
+    "jellyfishing:grease_block"
   ]
 }

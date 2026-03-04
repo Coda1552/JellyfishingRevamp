@@ -25,13 +25,18 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
+          "weight": 5,
           "name": "jellyfishing:bubble_jellyfish"
         },
         {
           "type": "minecraft:item",
           "weight": 1,
           "name": "jellyfishing:two_fisted_jumper"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "jellyfishing:grease_jellyfish"
         }
       ]
     }

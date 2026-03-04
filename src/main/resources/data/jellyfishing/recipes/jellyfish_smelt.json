@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "jellyfishing:jellyfish"
+  },
+  "result": "jellyfishing:jellyfish_jelly",
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -1,0 +1,19 @@
+{
+	"levels": [
+		"minecraft:overworld"
+	],
+	"provider": {
+		"type": "blueprint:overlay",
+		"overlays": [
+			{
+				"biome_source": {
+					"type": "minecraft:checkerboard",
+					"biomes": "jellyfishing:jellyfish_fields",
+					"scale": 2
+				},
+				"matches_biomes": ["minecraft:warm_ocean", "minecraft:lukewarm_ocean"]
+			}
+		]
+	},
+	"weight": 25
+}

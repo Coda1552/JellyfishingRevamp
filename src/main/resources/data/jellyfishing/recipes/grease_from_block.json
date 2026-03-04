@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "jellyfishing:grease_block"
+    }
+  },
+  "result": {
+    "item": "jellyfishing:grease_ball",
+    "count": 4
+  }
+}

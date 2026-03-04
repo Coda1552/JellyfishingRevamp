@@ -23,6 +23,10 @@ public class ModBiomes {
             new ResourceLocation(Jellyfishing.MOD_ID,
                     "rock_bottom"));
 
+    public static final ResourceKey<Biome> GRAVEYARD = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Jellyfishing.MOD_ID,
+                    "ghostly_graveyard"));
+
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(JELLYFISH_FIELDS, jellyfishFields(context));
     }

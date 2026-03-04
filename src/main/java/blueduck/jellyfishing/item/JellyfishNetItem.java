@@ -9,6 +9,6 @@ public class JellyfishNetItem extends Item {
 
 
     public int getEnchantmentValue() {
-        return 30;
+        return 1;
     }
 }

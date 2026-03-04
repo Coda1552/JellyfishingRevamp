@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "jellyfishing:grease_jellyfish"
+  },
+  "result": "jellyfishing:grease_ball",
+  "experience": 0.35,
+  "cookingtime": 200
+}

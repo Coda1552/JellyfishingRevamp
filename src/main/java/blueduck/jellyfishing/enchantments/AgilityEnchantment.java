@@ -1,6 +1,7 @@
 package blueduck.jellyfishing.enchantments;
 
 import blueduck.jellyfishing.item.JellyfishNetItem;
+import blueduck.jellyfishing.item.NetJellyfishItem;
 import blueduck.jellyfishing.registry.ModItems;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.AxeItem;
@@ -15,15 +16,15 @@ public class AgilityEnchantment extends Enchantment {
 
 
     public boolean canEnchant(ItemStack pStack) {
-        return pStack.getItem() instanceof JellyfishNetItem ? true : super.canEnchant(pStack);
+        return pStack.getItem() instanceof JellyfishNetItem || pStack.getItem() instanceof NetJellyfishItem ? true : super.canEnchant(pStack);
     }
 
     public int getMinCost(int pEnchantmentLevel) {
-        return 10;
+        return 10 + 20 * (pEnchantmentLevel - 1);
     }
 
     public int getMaxCost(int pEnchantmentLevel) {
-        return 50;
+        return getMinCost(pEnchantmentLevel) + 50;
     }
 
     /**

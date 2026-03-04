@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "jellyfishing:jumper_jelly"
+    }
+  },
+  "result": {
+    "item": "jellyfishing:jumper_jelly_block",
+    "count": 1
+  }
+}

@@ -21,7 +21,7 @@ public class Jellyfishing {
         ModSounds.SOUNDS.register(bus);
         ModPaintings.PAINTINGS.register(bus);
         ModEnchantments.ENCHANTMENTS.register(bus);
-        ModTerrablender.registerBiomes();
+        //ModTerrablender.registerBiomes();
         ModCreativeTabs.CREATIVE_TABS.register(bus);
     }
 }

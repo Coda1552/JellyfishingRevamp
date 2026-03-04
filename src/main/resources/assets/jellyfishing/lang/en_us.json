@@ -1,6 +1,8 @@
 {
   "block.jellyfishing.jelly_block": "Jelly Block",
   "block.jellyfishing.blue_jelly_block": "Blue Jelly Block",
+  "block.jellyfishing.jumper_jelly_block": "Jumper Jelly Block",
+  "block.jellyfishing.gelatinous_milk_block": "Gelatinous Milk Block",
 
   "block.jellyfishing.bubble_block": "Bubble Block",
   "block.jellyfishing.waxed_bubble_block": "Waxed Bubble Block",
@@ -51,6 +53,7 @@
   "block.jellyfishing.potted_pineapple": "Potted Pineapple",
 
   "block.jellyfishing.patty_tiles": "Patty Tiles",
+  "block.jellyfishing.grease_block": "Grease Block",
 
   "block.jellyfishing.grill": "Grill",
 
@@ -89,29 +92,38 @@
   "item.jellyfishing.gelatinous_milk": "Gelatinous Milk",
   "item.jellyfishing.jumper_jelly": "Jumper Jelly",
 
+  "item.jellyfishing.grease_upgrade_template": "Grease Upgrade Template",
+  "item.jellyfishing.smithing_template.grease_upgrade.ingredients": "Grease",
+  "upgrade.jellyfishing.grease_upgrade": "Grease Upgrade",
+
   "item.jellyfishing.jellyfish": "Jellyfish",
   "item.jellyfishing.blue_jellyfish": "Blue Jellyfish",
   "item.jellyfishing.bubble_jellyfish": "Bubble Jellyfish",
   "item.jellyfishing.cow_jellyfish": "Cow Jellyfish",
   "item.jellyfishing.two_fisted_jumper": "Two-Fisted Jumper",
+  "item.jellyfishing.grease_jellyfish": "Grease Jellyfish",
 
   "item.jellyfishing.net_of_jellyfish": "Net of Jellyfish",
   "item.jellyfishing.net_of_blue_jellyfish": "Net of Blue Jellyfish",
   "item.jellyfishing.net_of_bubble_jellyfish": "Net of Bubble Jellyfish",
   "item.jellyfishing.net_of_cow_jellyfish": "Net of Cow Jellyfish",
   "item.jellyfishing.net_of_two_fisted_jumper": "Net of Two-Fisted Jumper",
+  "item.jellyfishing.net_of_grease_jellyfish": "Net of Grease Jellyfish",
 
   "item.jellyfishing.jellyfish_spawn_egg": "Jellyfish Spawn Egg",
   "item.jellyfishing.blue_jellyfish_spawn_egg": "Blue Jellyfish Spawn Egg",
   "item.jellyfishing.bubble_jellyfish_spawn_egg": "Bubble Jellyfish Spawn Egg",
   "item.jellyfishing.cow_jellyfish_spawn_egg": "Cow Jellyfish Spawn Egg",
   "item.jellyfishing.two_fisted_jumper_spawn_egg": "Two-Fisted Jumper Spawn Egg",
+  "item.jellyfishing.grease_jellyfish_spawn_egg": "Grease Jellyfish Spawn Egg",
 
   "item.jellyfishing.jellyfish_jelly_sandwich": "Jellyfish Jelly Sandwich",
   "item.jellyfishing.blue_jellyfish_jelly_sandwich": "Blue Jellyfish Jelly Sandwich",
+  "item.jellyfishing.jumper_jelly_sandwich": "Jumper Jelly Sandwich",
 
   "item.jellyfishing.seanut_butter_jellyfish_jelly_sandwich": "Seanut Butter and Jellyfish Jelly Sandwich",
   "item.jellyfishing.seanut_butter_blue_jellyfish_jelly_sandwich": "Seanut Butter and Blue Jellyfish Jelly Sandwich",
+  "item.jellyfishing.seanut_butter_jumper_jelly_sandwich": "Seanut Butter and Jumper Jelly Sandwich",
 
   "item.jellyfishing.seanut": "Seanut",
   "item.jellyfishing.roasted_seanut": "Roasted Seanut",
@@ -146,12 +158,15 @@
   "item.jellyfishing.master_karate_glove": "Master Karate Glove",
   "item.jellyfishing.power_karate_glove": "Power Karate Glove",
 
+  "item.jellyfishing.patty_wagon": "Patty Wagon",
+
 
   "entity.jellyfishing.jellyfish": "Jellyfish",
   "entity.jellyfishing.blue_jellyfish": "Blue Jellyfish",
   "entity.jellyfishing.bubble_jellyfish": "Bubble Jellyfish",
   "entity.jellyfishing.cow_jellyfish": "Cow Jellyfish",
   "entity.jellyfishing.two_fisted_jumper": "Two-Fisted Jumper",
+  "entity.jellyfishing.patty_wagon": "Patty Wagon",
   "entity.minecraft.villager.jellyfishing.frycook": "Frycook",
 
   "biome.jellyfishing.jellyfish_fields": "Jellyfish Fields",

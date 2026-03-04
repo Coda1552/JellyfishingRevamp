@@ -9,6 +9,21 @@
           "functions": [
             {
               "function": "minecraft:set_count",
+              "count": 1
+            }
+          ],
+          "name": "jellyfishing:cow_jellyfish"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
               "count": {
                 "min": 0.0,
                 "max": 2.0,

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "jellyfishing:cow_jellyfish"
+  },
+  "result": "jellyfishing:gelatinous_milk",
+  "experience": 0.35,
+  "cookingtime": 200
+}

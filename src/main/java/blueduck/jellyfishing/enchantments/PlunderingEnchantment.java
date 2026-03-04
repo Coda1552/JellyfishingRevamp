@@ -1,6 +1,7 @@
 package blueduck.jellyfishing.enchantments;
 
 import blueduck.jellyfishing.item.JellyfishNetItem;
+import blueduck.jellyfishing.item.NetJellyfishItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -13,15 +14,15 @@ public class PlunderingEnchantment extends Enchantment {
 
 
     public boolean canEnchant(ItemStack pStack) {
-        return pStack.getItem() instanceof JellyfishNetItem ? true : super.canEnchant(pStack);
+        return pStack.getItem() instanceof JellyfishNetItem || pStack.getItem() instanceof NetJellyfishItem ? true : super.canEnchant(pStack);
     }
 
     public int getMinCost(int pEnchantmentLevel) {
-        return 10;
+        return 10 + 20 * (pEnchantmentLevel - 1);
     }
 
     public int getMaxCost(int pEnchantmentLevel) {
-        return 50;
+        return getMinCost(pEnchantmentLevel) + 50;
     }
 
     /**

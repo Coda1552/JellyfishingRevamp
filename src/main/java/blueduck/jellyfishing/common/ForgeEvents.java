@@ -1,9 +1,12 @@
 package blueduck.jellyfishing.common;
 
 import blueduck.jellyfishing.Jellyfishing;
+import blueduck.jellyfishing.entity.PattyWagonEntity;
 import blueduck.jellyfishing.registry.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -13,6 +16,8 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -31,24 +36,50 @@ public class ForgeEvents {
 
             //Buying Jellyfish
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.JELLYFISH.get(), 1),
-                    new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(ModItems.NET_JELLYFISH.get(), 1),
+                    new ItemStack(Items.EMERALD, 6),
                     8, 8, .2f));
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.BLUE_JELLYFISH.get(), 1),
-                    new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(ModItems.NET_BLUE_JELLYFISH.get(), 1),
+                    new ItemStack(Items.EMERALD, 10),
                     8, 12, .2f));
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.BUBBLE_JELLYFISH.get(), 1),
-                    new ItemStack(Items.EMERALD, 1),
+                    new ItemStack(ModItems.NET_BUBBLE_JELLYFISH.get(), 1),
+                    new ItemStack(Items.EMERALD, 5),
                     8, 6, .2f));
             trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.COW_JELLYFISH.get(), 1),
-                    new ItemStack(Items.EMERALD, 4),
+                    new ItemStack(ModItems.NET_COW_JELLYFISH.get(), 1),
+                    new ItemStack(Items.EMERALD, 12),
                     4, 8, .2f));
             trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.TWO_FISTED_JUMPER.get(), 1),
-                    new ItemStack(Items.EMERALD, 9),
+                    new ItemStack(ModItems.NET_TWO_FISTED_JUMPER.get(), 1),
+                    new ItemStack(Items.EMERALD, 17),
+                    6, 20, .2f));
+            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.NET_GREASE_JELLYFISH.get(), 1),
+                    new ItemStack(Items.EMERALD, 20),
+                    6, 20, .2f));
+
+            //Buying Jellies
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.JELLYFISH_JELLY.get(), 20),
+                    new ItemStack(Items.EMERALD, 1),
+                    6, 20, .2f));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.BLUE_JELLYFISH_JELLY.get(), 15),
+                    new ItemStack(Items.EMERALD, 1),
+                    6, 20, .2f));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.BUBBLE_SOAP.get(), 12),
+                    new ItemStack(Items.EMERALD, 1),
+                    6, 20, .2f));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.JUMPER_JELLY.get(), 8),
+                    new ItemStack(Items.EMERALD, 1),
+                    6, 20, .2f));
+            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.WAD_OF_GREASE.get(), 3),
+                    new ItemStack(Items.EMERALD, 2),
                     6, 20, .2f));
 
             //Selling Stuff
@@ -87,6 +118,22 @@ public class ForgeEvents {
                     new ItemStack(ModItems.KARATE_GLOVE.get(), 1),
                     6, 14, .2f));
         }
+
+        if (event.getType() == VillagerProfession.BUTCHER) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.WAD_OF_GREASE.get(), 5),
+                    new ItemStack(Items.EMERALD, 4),
+                    6, 20, .2f));
+        }
+
+        if (event.getType() == VillagerProfession.FARMER) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.PINEAPPLE.get(), 12),
+                    new ItemStack(Items.EMERALD, 1),
+                    6, 20, .2f));
+        }
     }
 
     @SubscribeEvent
@@ -104,6 +151,25 @@ public class ForgeEvents {
                 new ItemStack(Items.EMERALD, 9),
                 new ItemStack(ModItems.KRABBY_PATTY.get(), 1),
                 6, 14, .2f));
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 12),
+                new ItemStack(ModItems.NET_GREASE_JELLYFISH.get(), 1),
+                6, 14, .2f));
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 12),
+                new ItemStack(ModItems.NET_TWO_FISTED_JUMPER.get(), 1),
+                6, 14, .2f));
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 12),
+                new ItemStack(ModItems.NET_COW_JELLYFISH.get(), 1),
+                6, 14, .2f));
+    }
+
+    @SubscribeEvent
+    public static void entityFallEvent(LivingFallEvent event) {
+        if (event.getEntity().isPassenger() && event.getEntity().getVehicle() instanceof PattyWagonEntity) {
+            event.setCanceled(true);
+        }
     }
 
     @SubscribeEvent
@@ -111,7 +177,7 @@ public class ForgeEvents {
         if (event.getName().equals(new ResourceLocation("minecraft:gameplay/fishing/fish"))) {
             LootPool pool = event.getTable().getPool("main");
             if (pool != null) {
-                addEntry(pool, getInjectEntry(new ResourceLocation("jellyfishing", "gameplay/fishing/jellyfish"), 2, 0));
+                addEntry(pool, getInjectEntry(new ResourceLocation("jellyfishing", "gameplay/fishing/jellyfish"), 15, 0));
 
             }
         }
@@ -147,6 +213,13 @@ public class ForgeEvents {
             LootPool pool = event.getTable().getPool("main");
             if (pool != null) {
                 addEntry(pool, getInjectEntry(new ResourceLocation("jellyfishing", "chests/shipwreck_treasure"), 25, 0));
+
+            }
+        }
+        if (event.getName().equals(new ResourceLocation("minecraft:chests/buried_treasure"))) {
+            LootPool pool = event.getTable().getPool("main");
+            if (pool != null) {
+                addEntry(pool, getInjectEntry(new ResourceLocation("jellyfishing", "chests/buried_treasure"), 20, 0));
 
             }
         }

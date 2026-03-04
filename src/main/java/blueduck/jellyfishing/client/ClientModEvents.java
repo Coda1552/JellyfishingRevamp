@@ -24,7 +24,9 @@ public final class ClientModEvents {
         event.registerLayerDefinition(BubbleJellyfishModel.LAYER_LOCATION, BubbleJellyfishModel::createBodyLayer);
         event.registerLayerDefinition(CowJellyfishModel.LAYER_LOCATION, CowJellyfishModel::createBodyLayer);
         event.registerLayerDefinition(TwoFistedJumperModel.LAYER_LOCATION, TwoFistedJumperModel::createBodyLayer);
+        event.registerLayerDefinition(GreaseJellyfishModel.LAYER_LOCATION, GreaseJellyfishModel::createBodyLayer);
 
+        event.registerLayerDefinition(PattyWagonModel.LAYER_LOCATION, PattyWagonModel::createBodyLayer);
 
         event.registerLayerDefinition(SuitModel.LAYER_LOCATION, SuitModel::createBodyLayer);
 
@@ -37,5 +39,7 @@ public final class ClientModEvents {
         event.registerEntityRenderer(ModEntities.BUBBLE_JELLYFISH.get(), BubbleJellyfishRenderer::new);
         event.registerEntityRenderer(ModEntities.COW_JELLYFISH.get(), CowJellyfishRenderer::new);
         event.registerEntityRenderer(ModEntities.TWO_FISTED_JUMPER.get(), TwoFistedJumperRenderer::new);
+        event.registerEntityRenderer(ModEntities.GREASE_JELLYFISH.get(), GreaseJellyfishRenderer::new);
+        event.registerEntityRenderer(ModEntities.PATTY_WAGON.get(), PattyWagonRenderer::new);
     }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "jellyfishing:grease_ball"
+  },
+  "base": {
+    "item": "jellyfishing:spatula"
+  },
+  "result": {
+    "item": "jellyfishing:golden_spatula"
+  },
+  "template": {
+    "item": "jellyfishing:grease_upgrade_template"
+  }
+}
